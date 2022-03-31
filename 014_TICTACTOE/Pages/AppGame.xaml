@@ -1,0 +1,113 @@
+﻿<Page x:Class="_014_TICTACTOE.Pages.AppGame"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:_014_TICTACTOE.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="550" d:DesignWidth="500"
+      Title="AppGame">
+    <Page.Resources>
+        <Style x:Key="MyButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" BorderThickness="0" BorderBrush="Black" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.8" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="40" />
+            <Setter Property="Panel.ZIndex" Value="10" />
+        </Style>
+        
+    </Page.Resources>
+    <Grid Background="#FF1D1D1D">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal" Margin="10,0,0,0" Grid.Column="0" HorizontalAlignment="Left">
+                <Image Source="/Images/White/x_sign.png" Width="18"/>
+                <TextBlock Text="" 
+                           x:Name="Player1Info"
+                           Foreground="White" 
+                           VerticalAlignment="Center" 
+                           FontSize="22" 
+                           Margin="10,0,0,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,10,0" Grid.Column="2" HorizontalAlignment="Right">
+                <TextBlock Text="" 
+                           x:Name="Player2Info"
+                           Foreground="White" 
+                           VerticalAlignment="Center" 
+                           FontSize="22" 
+                           Margin="0,0,10,0"/>
+                <Image Source="/Images/White/circle.png" Width="18"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Column="1">
+
+                <TextBlock x:Name="TurnInfo" 
+                           Text="" 
+                           VerticalAlignment="Center" 
+                           HorizontalAlignment="Center" 
+                           TextAlignment="Center" 
+                           Foreground="White" 
+                           FontSize="15"/>
+                <TextBlock x:Name="GameResultInfo"
+                           Text=""
+                           Foreground="DeepSkyBlue"
+                           FontSize="22"
+                           TextAlignment="Center"/>
+            </StackPanel>
+        </Grid>
+        
+        <Grid Grid.Row="1" Width="450" Height="450">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Line Panel.ZIndex="5" X1="150" Y1="450" X2="150" Y2="0" Stroke="White" StrokeThickness="4" Grid.Column="0" Grid.RowSpan="3"/>
+            <Line Panel.ZIndex="5" X1="150" Y1="450" X2="150" Y2="0" Stroke="White" StrokeThickness="4" Grid.Column="1" Grid.RowSpan="3"/>
+            <Line Panel.ZIndex="5" X1="450" Y1="150" X2="0" Y2="150" Stroke="White" StrokeThickness="4" Grid.Row="0" Grid.ColumnSpan="3"/>
+            <Line Panel.ZIndex="5" X1="450" Y1="150" X2="0" Y2="150" Stroke="White" StrokeThickness="4" Grid.Row="1" Grid.ColumnSpan="3"/>
+
+            <Button x:Name="b00" Grid.Row="0" Grid.Column="0" Click="CellClicked" Style="{StaticResource MyButton}"/>
+            <Button x:Name="b01" Grid.Row="0" Grid.Column="1" Click="CellClicked" Style="{StaticResource MyButton}"/>
+            <Button x:Name="b02" Grid.Row="0" Grid.Column="2" Click="CellClicked" Style="{StaticResource MyButton}"/>
+
+            <Button x:Name="b10" Grid.Row="1" Grid.Column="0" Click="CellClicked" Style="{StaticResource MyButton}"/>
+            <Button x:Name="b11" Grid.Row="1" Grid.Column="1" Click="CellClicked" Style="{StaticResource MyButton}"/>
+            <Button x:Name="b12" Grid.Row="1" Grid.Column="2" Click="CellClicked" Style="{StaticResource MyButton}"/>
+
+            <Button x:Name="b20" Grid.Row="2" Grid.Column="0" Click="CellClicked" Style="{StaticResource MyButton}"/>
+            <Button x:Name="b21" Grid.Row="2" Grid.Column="1" Click="CellClicked" Style="{StaticResource MyButton}"/>
+            <Button x:Name="b22" Grid.Row="2" Grid.Column="2" Click="CellClicked" Style="{StaticResource MyButton}"/>
+        </Grid>
+        <TextBlock x:Name="RoomInfoTextBlock" Text="Kod pokoju: " Grid.Row="1" VerticalAlignment="Bottom" Foreground="#FF6C6C6C" FontSize="10"/>
+    </Grid>
+</Page>

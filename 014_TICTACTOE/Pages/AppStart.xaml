@@ -1,0 +1,112 @@
+﻿<Page x:Class="_014_TICTACTOE.Pages.AppStart"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:_014_TICTACTOE.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="550" d:DesignWidth="500"
+      Title="AppStart">
+
+    <Grid Background="#FF1D1D1D">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="TIC TAC TOE"
+                   Grid.Row="0"
+                   Grid.ColumnSpan="2"
+                   TextAlignment="Center"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="30"
+                   FontFamily="Arial Black" 
+                   Foreground="White"/>
+
+        <TextBlock Text="Podaj swoją nazwę"
+                   Grid.Row="1"
+                   TextAlignment="Center"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="15"
+                   FontFamily="Bahnschrift Light" 
+                   Foreground="White"/>
+
+        <TextBox 
+                 Grid.Row="1"
+                 Grid.Column="1"
+                 Width="200"
+                 Height="40"
+                 Padding="10"
+                 FontFamily="Bahnschrift Light" 
+                 FontSize="15"
+                 Background="#FF292929" 
+                 BorderBrush="{x:Null}"
+                 Foreground="white"
+                 x:Name="UserNick" 
+                 SelectionBrush="{x:Null}" 
+                 />
+
+        <Button Content="Stwórz pokój"
+                Grid.Row="2"
+                Grid.Column="0"
+                Width="150"
+                Height="40"
+                FontFamily="Bahnschrift"
+                FontSize="15"
+                Background="#FFC3C3C3" 
+                BorderBrush="{x:Null}"
+                Click="CreateRoomClicked"
+                />
+
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <TextBox Grid.Row="0"
+                     Width="200"
+                     Height="40"
+                     Padding="10"
+                     TextAlignment="Center"
+                     VerticalAlignment="Bottom"
+                     FontFamily="Bahnschrift Light" 
+                     FontSize="15"
+                     Background="#FF292929" 
+                     BorderBrush="{x:Null}"
+                     Foreground="white"
+                     SelectionBrush="{x:Null}"
+                     x:Name="RoomCode"
+                />
+            <Button Content="Dołącz do pokoju"
+                    Grid.Row="1"
+                    Width="200"
+                    Height="40"
+                    VerticalAlignment="Top"
+                    FontFamily="Bahnschrift"
+                    FontSize="15"
+                    Background="#FFC3C3C3" 
+                    BorderBrush="{x:Null}"
+                    Click="JoinGameClicked"
+                    />
+        </Grid>
+
+        <TextBlock Text="Copyright © by Wiktor Stabach"
+                   Grid.Row="3"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   TextAlignment="Center"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Foreground="#FF717171" 
+                   FontFamily="Bahnschrift Light"/>
+    </Grid>
+</Page>

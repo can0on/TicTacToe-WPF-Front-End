@@ -1,0 +1,76 @@
+﻿<Page x:Class="_014_TICTACTOE.Pages.AppEnd"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:_014_TICTACTOE.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="550" d:DesignWidth="500"
+      Title="AppEnd">
+
+    <Grid Background="#FF1D1D1D">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Text="YOU WIN" 
+                   x:Name="GameResult"
+                   FontSize="180" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Center" 
+                   TextAlignment="Center" 
+                   TextWrapping="Wrap" 
+                   FontFamily="Bahnschrift SemiBold" 
+                   Foreground="White" 
+                   LineStackingStrategy="BlockLineHeight" 
+                   LineHeight="150"
+                   Grid.Row="0" Margin="0,60,0,0"/>
+        
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button Content="Rewanż"
+                    Grid.Column="0"
+                    Width="150"
+                    Height="40"
+                    FontFamily="Bahnschrift"
+                    FontSize="15"
+                    Background="White" 
+                    BorderBrush="{x:Null}"
+                    Click="RevengeClicked"
+                    HorizontalAlignment="Right" 
+                    Margin="0,0,14,0"/>
+            
+            <Button Content="Nowy pokój"
+                    Grid.Column="1"
+                    Width="150"
+                    Height="40"
+                    FontFamily="Bahnschrift"
+                    FontSize="15"
+                    Background="White" 
+                    BorderBrush="{x:Null}"
+                    Click="CreateRoomClicked"
+                    HorizontalAlignment="Left" Margin="14,0,0,0"/>
+            
+            <Button Content="Menu"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    VerticalAlignment="Top"
+                    Grid.Row="1"
+                    Width="150"
+                    Height="40"
+                    FontFamily="Bahnschrift"
+                    FontSize="15"
+                    Background="White" 
+                    BorderBrush="{x:Null}"
+                    Click="MenuClicked"/>
+        </Grid>
+    </Grid>
+</Page>

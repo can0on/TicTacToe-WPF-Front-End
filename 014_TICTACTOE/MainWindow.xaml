@@ -1,0 +1,50 @@
+﻿<Window x:Class="_014_TICTACTOE.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_014_TICTACTOE"
+        mc:Ignorable="d"
+        Title="TIC TAC TOE" 
+        Width="500" 
+        Height="550" 
+        WindowStyle="None" 
+        ResizeMode="NoResize" 
+        WindowStartupLocation="CenterScreen" 
+        AllowsTransparency="True"
+        MouseDown="DragWindow"
+        KeyDown="ChangeActionMenuState">
+
+    <Grid>
+        <Frame x:Name="AppFrame" NavigationUIVisibility="Hidden"/>
+        <Grid x:Name="ActionMenu" Background="#E50A0A0A" Width="200" Height="150" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button Content="Wyjdź do menu" 
+                    Grid.Row="0" 
+                    VerticalAlignment="Center" 
+                    HorizontalAlignment="Center" 
+                    Padding="10"
+                    Width="150" 
+                    BorderBrush="{x:Null}"
+                    FontFamily="Bahnschrift"
+                    FontSize="15"
+                    Background="#FFC3C3C3"
+                    Click="NavigateToAppStart"/>
+
+            <Button Content="Zamknij aplikację"
+                    Grid.Row="1"
+                    VerticalAlignment="Center" 
+                    HorizontalAlignment="Center" 
+                    Padding="10"
+                    Width="150" 
+                    BorderBrush="{x:Null}"
+                    FontFamily="Bahnschrift"
+                    FontSize="15"
+                    Background="#FFC3C3C3"
+                    Click="CloseApp"/>
+        </Grid>
+    </Grid>
+</Window>
